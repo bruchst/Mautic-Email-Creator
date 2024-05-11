@@ -1,11 +1,8 @@
 import streamlit as st
 import pandas as pd
 import requests
-from dotenv import load_dotenv
-import os
 
-load_dotenv()
-WEBHOOK_URL = os.getenv('WEBHOOK_URL')
+WEBHOOK_URL = st.secrets["WEBHOOK_URL"]
 
 def post_to_webhook(**data):
     response = requests.post(WEBHOOK_URL, json=data)
