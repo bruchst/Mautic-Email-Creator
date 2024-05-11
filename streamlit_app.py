@@ -22,9 +22,9 @@ Got a great email for a campaign and need a copy paste helper? Fill a form and h
 )
 
 with st.form(key="idea_form"):
-    name = st.text_input("Internal name", placeholder="x")
-    subject = st.text_input("Subject", placeholder="x")
-    html = st.text_area("Insert HTML template", placeholder="x")
+    name = st.text_input("Internal name", placeholder="2030 - 05- CLIENTS - email")
+    subject = st.text_input("Subject", placeholder="Easy Redmine subject!")
+    html = st.text_area("Insert HTML template", placeholder="insert everything after <!-- BEGIN BODY // --> comment to <!-- // END BODY -->, it should start with <table> html.")
     submit_button = st.form_submit_button(label="Submit Email Template 🚀")
 
     if submit_button:
