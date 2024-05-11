@@ -2,8 +2,11 @@ import streamlit as st
 from streamlit_gsheets import GSheetsConnection
 import pandas as pd
 import requests
+from dotenv import load_dotenv
+import os
 
-WEBHOOK_URL = "https://eokeetbz6gobe0g.m.pipedream.net"
+load_dotenv()
+WEBHOOK_URL = os.getenv('WEBHOOK_URL')
 
 def post_to_webhook(**data):
     response = requests.post(WEBHOOK_URL, json=data)
