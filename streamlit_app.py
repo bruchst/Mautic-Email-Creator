@@ -21,6 +21,9 @@ with st.form(key="idea_form"):
     name = st.text_input("Internal name", placeholder="2030 - 05- CLIENTS - email")
     subject = st.text_input("Subject", placeholder="Easy Redmine subject!")
     html = st.text_area("Insert HTML template", placeholder="insert everything after <!-- BEGIN BODY // --> comment to <!-- // END BODY -->, it should start with <table> html.")
+    utmsource = st.text_input("Campaign source", placeholder="newsletter")
+    utmmedium = st.text_input("Campaign medium", placeholder="email")
+    utmcampaign = st.text_input("Campaign name", placeholder="Scrum_Boards")
     submit_button = st.form_submit_button(label="Submit Email Template 🚀")
 
     if submit_button:
@@ -28,7 +31,7 @@ with st.form(key="idea_form"):
             st.error("Please enter an email info 💡")
             st.stop()
 
-        data = {"name": name, "subject": subject, "customHtml": html}
+        data = {"name": name, "subject": subject, "customHtml": html, "utmSource": utmsource, "utmMedium": utmmedium, "utmCampaign": utmcampaign}
         response = post_to_webhook(**data)
         if response.status_code == 200:
             st.success("Thanks for your submission! 🌟")
