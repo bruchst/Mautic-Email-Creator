@@ -24,18 +24,19 @@ with st.form(key="idea_form"):
     utmsource = st.text_input("Campaign source", placeholder="newsletter")
     utmmedium = st.text_input("Campaign medium", placeholder="email")
     utmcampaign = st.text_input("Campaign name", placeholder="Scrum_Boards")
-    st.write("Choose where to create Mautic email:")
-    mauticoption_EPcom = st.checkbox("EP.com")
-    mauticoption_EPcz = st.checkbox("EP.cz")
-    mauticoption_EPhu = st.checkbox("EP.hu")
+    #st.write("Choose where to create Mautic email:")
+    #mauticoption_EPcom = st.checkbox("EP.com")
+    #mauticoption_EPcz = st.checkbox("EP.cz")
+    #mauticoption_EPhu = st.checkbox("EP.hu")
     submit_button = st.form_submit_button(label="Submit Email Template 🚀")
 
     if submit_button:
         if not html.strip():
             st.error("Please enter an email info 💡")
             st.stop()
-
-        data = {"name": name, "subject": subject, "customHtml": html, "utmSource": utmsource, "utmMedium": utmmedium, "utmCampaign": utmcampaign, "mauticoption_EPcom": mauticoption_EPcom, "mauticoption_EPcz": mauticoption_EPcz, "mauticoption_EPhu": mauticoption_EPhu}
+            
+        data = {"name": name, "subject": subject, "customHtml": html, "utmSource": utmsource, "utmMedium": utmmedium, "utmCampaign": utmcampaign}
+        #"mauticoption_EPcom": mauticoption_EPcom, "mauticoption_EPcz": mauticoption_EPcz, "mauticoption_EPhu": mauticoption_EPhu
         response = post_to_webhook(**data)
         if response.status_code == 200:
             st.success("Thanks for your submission! 🌟")
