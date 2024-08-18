@@ -10,7 +10,6 @@ def post_to_webhook(**data):
 
 
 st.title("🤖 Email Mautic Helper for Marketing")
-st.title("🤖 Email Mautic Helper for Marketing")
 
 st.markdown(
     """
