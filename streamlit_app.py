@@ -26,8 +26,8 @@ with st.form(key="idea_form"):
     utmcampaign = st.text_input("Campaign name", placeholder="Scrum_Boards")
     st.write("Choose where to create Mautic email:")
     mauticoption_EPcom = st.checkbox("EP.com")
-    mauticoption_EPcz = st.checkbox("EP.com")
-    mauticoption_EPhu = st.checkbox("EP.com")
+    mauticoption_EPcz = st.checkbox("EP.cz")
+    mauticoption_EPhu = st.checkbox("EP.hu")
     submit_button = st.form_submit_button(label="Submit Email Template 🚀")
 
     if submit_button:
